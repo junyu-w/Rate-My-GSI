@@ -1,6 +1,15 @@
 <h1>Comments#index</h1>
 <p>Find me in app/views/comments/index.html.erb</p>
-<p>
+<li>Dengchao</li>
+
+
+<p><div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <img class="img-responsive" src="http://f.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=bcfb89a75aee3d6d36cb8f99227f0647/35a85edf8db1cb13a492a613de54564e92584b33.jpg" alt="">
+      </div>
+ <div class="col-lg-5 col-lg-offset-2 col-sm-6">     
+<p> Graduated in the best school ever, received 5 GPA and scored full mark for every single test, He went back and became the most popular GSI ever.<br><br>
+ After talking to Chao I figured that he's almost annoyed of being so popular that students will simply chase after him wherever he goes. As the highest rated GSI he also has an amazing personality. Very funny and doesn't use his humor for fun but for teaching purpose. <br><br>
+ If you find him cool please give your comments help him improve. And his contact info is held as private.</p>
   <p>
     <% @comments.each do |p| %>
       <h3>
@@ -18,7 +27,7 @@
   <p>
     <button type="button" class="btn btn-sm">
           <div>
-            <%= link_to "New", new_comment_path %>
+            <%= link_to "Give Comments", new_comment_path %>
           </div>
     </button>
   </p>
