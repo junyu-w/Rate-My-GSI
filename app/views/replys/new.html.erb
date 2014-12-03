@@ -1,0 +1,7 @@
+<h1>Replys#new</h1>
+<p>Find me in app/views/replys/new.html.erb</p>
+<%= simple_form_for Reply.new, :url => gsi_comment_replys_path do |f| %>
+  <%= f.input :content %>
+  <br>
+  <%= f.button :submit %>
+<% end %>
