@@ -1,0 +1,20 @@
+var content = '
+   <h3>\
+     <b>\
+       <em>\
+         <%= @new_comment.title %>\
+       </em>\
+     </b>\
+   </h3>\
+     <br>\
+   <h4>\
+     <%= @new_comment.content %>\
+   </h4>\
+    <button type="button" class="btn-sm"><div>\
+       <%= link_to "Reply", new_comment_reply_path(@new_comment) %>\
+    </div></button>
+'
+$('#full-content').append(content);
+$('.task_desc').val("");
+
+

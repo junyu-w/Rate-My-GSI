@@ -1,0 +1,14 @@
+<h1>Gsis#index</h1>
+<p>Find me in app/views/gsis/index.html.erb</p>
+<% @gsis.each do |g| %>
+  <p>
+    <h3><b>
+      Name: <%=link_to g.name, gsi_comments_path(g)%>
+      <br>
+      Course: <%= g.course %>
+      <br>
+      Description: <%= g.description %>
+    </b></h3>
+  </p>
+<% end %>
+

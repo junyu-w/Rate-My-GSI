@@ -1,0 +1,54 @@
+<h1>Comments#index</h1>
+<p>Find me in app/views/comments/index.html.erb</p>
+
+
+<p><div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <img class="img-responsive" src="http://animalia-life.com/data_images/dog/dog4.jpg" alt="">
+      </div>
+ <div class="col-lg-5 col-lg-offset-2 col-sm-6">     
+   <p><%= @gsi.name %></p>
+   <p><%= @gsi.description %><p>
+  <% @comments.each do |c| %>
+    <div id="full-content">
+      <div class="comment">
+        <h3>
+            <b>
+              <em>
+                <%= c.title %>
+              </em>
+            </b>
+        </h3>
+        <br>
+        <h4>
+          <%= c.content %>
+        </h4>
+      </div>
+      <button type="button" class="btn-sm"><div>
+        <%= link_to "Reply", new_gsi_comment_reply_path(@gsi,c) %>
+      </div></button>
+    </div>
+  <% end %>
+</p>
+<br>
+  <p>
+    <%= form_for @new_comment, url: gsi_comments_path(@gsi), html: { class: 'form-inline', id: 'task_form', role: 'form'}, remote: true do |f| %>      
+      <p>
+        <div class="form-group">
+          <p>
+            <%= label_tag(:title, "Title: ") %>
+            <br>
+            <%= f.text_field :title, class: 'form-control task_desc' %>
+          </p>
+          <p>
+            <%= label_tag(:content, "Content: ") %>
+            <br>
+            <%= f.text_field :content, class: 'form-control task_desc' %>
+          </p>
+        </div>
+      </p>
+      <p>
+        <%= f.submit "Comment", class: "btn btn-primary submit-btn" %>
+      </p>
+    <% end %>
+  </p>
+</p>
