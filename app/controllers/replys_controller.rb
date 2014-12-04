@@ -22,6 +22,8 @@ class ReplysController < ApplicationController
   end
 
   def new
+    @new_reply = Reply.new
+    @gsi = Gsi.find(params[:gsi_id])
   end
 
   def update
