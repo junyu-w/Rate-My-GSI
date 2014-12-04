@@ -7,11 +7,10 @@
  <div class="col-lg-5 col-lg-offset-2 col-sm-6">     
    <h2>
      <p><%= @gsi.name %></p>
-       <span class="label label-default">
-         <%= @gsi.average_rating %>
-       </span>
-       <br>
-       <br>
+     <span class="label label-default">
+       <%= @gsi.average_rating %>
+     </span>
+     <br><br>
      <p><%= @gsi.description %><p>
    </h2>
    <br>
@@ -37,8 +36,9 @@
       <div class="replys">
       <h5>
         <% Reply.where(comment_id: c.id).each do |r| %>
-          <%= r.content %>
-          <br>
+          <div id="followup">
+            <%= r.content %>
+          </div>
         <% end %>
       </h5>
       </div>
@@ -46,11 +46,14 @@
         <%= link_to "Reply", new_gsi_comment_reply_path(@gsi,c) %>
       </div></button>
     </div>
+    <br>
   <% end %>
+  <br>
 </p>
 <br>
   <p>
-    <%= form_for @new_comment, url: gsi_comments_path(@gsi), html: { class: 'form-inline', id: 'task_form', role: 'form'}, remote: true do |f| %>      
+  <!-- delete remote: true -->
+    <%= form_for @new_comment, url: gsi_comments_path(@gsi), html: { class: 'form-inline', id: 'task_form', role: 'form'} do |f| %>      
       <p>
         <div class="form-group">
           <p>
@@ -76,3 +79,11 @@
     <% end %>
   </p>
 </p>
+<style>
+#followup {
+    width: 320px;
+    padding: 5px;
+    border: 1px solid gray;
+    margin: 0; 
+}
+</style>
