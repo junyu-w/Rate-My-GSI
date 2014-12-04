@@ -14,8 +14,8 @@
      <p><%= @gsi.description %><p>
    </h2>
    <br>
-  <% @comments.each do |c| %>
     <div id="full-content">
+  <% @comments.each do |c| %>
       <div class="comment">
         <h4>
             <b>
@@ -37,7 +37,7 @@
       <h5>
         <% Reply.where(comment_id: c.id).each do |r| %>
           <div id="followup">
-            <%= r.content %>
+            &nbsp--->&nbsp<%= r.content %>
           </div>
         <% end %>
       </h5>
@@ -45,15 +45,15 @@
       <button type="button" class="btn-sm"><div>
         <%= link_to "Reply", new_gsi_comment_reply_path(@gsi,c) %>
       </div></button>
-    </div>
     <br>
   <% end %>
+    </div>
   <br>
 </p>
 <br>
   <p>
   <!-- delete remote: true -->
-    <%= form_for @new_comment, url: gsi_comments_path(@gsi), html: { class: 'form-inline', id: 'task_form', role: 'form'} do |f| %>      
+    <%= form_for @new_comment, url: gsi_comments_path(@gsi), html: { class: 'form-inline', id: 'task_form', role: 'form'}, remote: true do |f| %>      
       <p>
         <div class="form-group">
           <p>

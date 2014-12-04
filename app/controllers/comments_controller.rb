@@ -25,16 +25,16 @@ class CommentsController < ApplicationController
     @gsi = Gsi.find(params[:gsi_id])
     @new_comment = Comment.new(comment_params)
     @new_comment.update_attributes(:gsi_id => @gsi.id)
-    #respond_to do |format|
-      if @new_comment.save
-        redirect_to(gsi_comments_path(@gsi))
-        #format.html { redirect_to(gsi_comments_path(@gsi)) }
-        #format.js
+    respond_to do |format|
+      if true
+        #redirect_to(gsi_comments_path(@gsi))
+        format.html { redirect_to(gsi_comments_path(@gsi)) }
+        format.js
       else
         flash[:error] = @new_comment.errors.full_messages.to_sentence
         redirect_to(gsi_comments_path(@gsi))
       end
-    #end
+    end
   end
 
   def new
