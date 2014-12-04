@@ -7,7 +7,11 @@
  <div class="col-lg-5 col-lg-offset-2 col-sm-6">     
    <h2>
      <p><%= @gsi.name %></p>
-     <p><%= @gsi.average_rating %></p>
+       <span class="label label-default">
+         <%= @gsi.average_rating %>
+       </span>
+       <br>
+       <br>
      <p><%= @gsi.description %><p>
    </h2>
    <br>
@@ -22,7 +26,9 @@
             </b>
         </h4>
         <b><h5>
+        <span class="label label-default">
           <%= c.rating %>
+        </span>
         </h5></b>
         <h4>
           <%= c.content %>
