@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203035038) do
+ActiveRecord::Schema.define(version: 20141203145747) do
+
+  create_table "ratings", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "parent_id"
+    t.integer  "level"
+    t.boolean  "is_average"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
