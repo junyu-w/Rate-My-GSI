@@ -8,6 +8,9 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
-%w(Nadler Hilfinger Denero Sherlock Watsom).each do |name|
-  Gsi.create! name: name, description: "I'm greate, rate me high", course: "Hell Berkeley", average_rating: 0
+%w(Sam).each do |name|
+  Gsi.create! name: name, description: "Hi! I'm Sam, a student studying EECS and education here at Berkeley. As an avid learner (I'm really into edX and online learning) and an enthusiastic teacher (TA'ing for CS61AS right now!) I am super excited for you guys to learn about one of the most powerful frameworks around. In my spare time I enjoy biking, bouldering, and learning new things. This course is going to be awesome, and I hope you're ready to learn a lot!", course: "Ruby on Rails", average_rating: 0, img_url:"../../assets/sam_lau.jpeg"
+end
+%w(Howard).each do |name|
+  Gsi.create! name: name, description: "Hi, I'm Howard, a CS major at UC Berkeley and a software engineer at Salesforce. I love teaching because I love the idea of passing on knowledge, and I also love Computer Science because it is super interesting and fun (or I just might be a huge nerd). In my free time I like to just chill with my friends and catch up on my sleep!", course: "Ruby on Rails", average_rating: 0, img_url:"../../assets/howard_chen.jpeg"
 end

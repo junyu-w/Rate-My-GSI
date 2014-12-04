@@ -48,7 +48,9 @@
             <div class="row">    
               <br>
               <div class="col-md-2 col-sm-3 text-center">
-                <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/58.jpg" style="width:100px;height:100px" class="img-circle"></a>
+                <%= link_to gsi_comments_path(g) do %>
+                  <%= image_tag(g.img_url) %>
+                <% end %>
               </div>
               <div class="col-md-10 col-sm-9">
                 <h3><%= link_to g.name, gsi_comments_path(g) %></h3>
