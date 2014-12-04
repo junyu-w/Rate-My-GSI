@@ -14,10 +14,10 @@ class ReplysController < ApplicationController
     @new_reply = Reply.new(reply_params)
     @new_reply.update_attributes(:comment_id => @comment.id)
     if @new_reply.save
-      redirect_to(gsi_comment_replys_path(@gsi, @comment))
+      redirect_to(gsi_comments_path(@gsi))
     else
       flash[:error] = @new_reply.errors.full_messages.to_sentence
-      redirect_to(gsi_comment_replys_path(@gsi, @comment))
+      redirect_to(gsi_comments_path(@gsi))
     end
   end
 

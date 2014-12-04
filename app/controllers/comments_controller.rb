@@ -5,6 +5,15 @@ class CommentsController < ApplicationController
     @gsi = Gsi.find(params[:gsi_id])
     @comments = Comment.where(gsi_id: @gsi.id)
     @new_comment = Comment.new
+    avg = 0
+    sum = 0
+    if @comments.length > 0
+      @comments.each do |c|
+        sum += c.rating
+      end
+      avg = sum/@comments.length
+    end
+    @gsi.update_attributes(:average_rating => avg)
   end
 
   def show
@@ -43,7 +52,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:title, :content)
+    params.require(:comment).permit(:title, :content, :rating)
   end
 
 end

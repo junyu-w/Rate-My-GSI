@@ -1,14 +1,121 @@
-<h1>Gsis#index</h1>
-<p>Find me in app/views/gsis/index.html.erb</p>
-<% @gsis.each do |g| %>
-  <p>
-    <h3><b>
-      Name: <%=link_to g.name, gsi_comments_path(g)%>
-      <br>
-      Course: <%= g.course %>
-      <br>
-      Description: <%= g.description %>
-    </b></h3>
-  </p>
-<% end %>
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Rate My GSI
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              This is a website that let students write comment and rate their GSIs. Aiming to help Berkeley folks
+              find the best GSI for them.
+              <br>
+              <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp --By Junyu Wang, Michael Wei, Sean Dong, Kuner Qian
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
 
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+          
+          
+          
+          <!--/stories-->
+          <% @gsis.each do |g| %>
+            <div class="row">    
+              <br>
+              <div class="col-md-2 col-sm-3 text-center">
+                <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/58.jpg" style="width:100px;height:100px" class="img-circle"></a>
+              </div>
+              <div class="col-md-10 col-sm-9">
+                <h3><%= link_to g.name, gsi_comments_path(g) %></h3>
+                <div class="row">
+                  <div class="col-xs-9">
+                    <h4><span class="label label-default"><%= g.average_rating %></span></h4><h4>
+                      <small style="font-family:courier,'new courier';" class="text-muted"><%= g.description %></small>
+                      <br>
+                      <small style="font-family:courier,'new courier';" class="text-muted"><%= link_to "Read More", gsi_comments_path(g) %></small>
+                    </h4></div>
+                  <div class="col-xs-3"></div>
+                </div>
+                <br><br>
+              </div>
+            </div>
+            <hr>
+          <% end %>
+
+          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+        
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
