@@ -5,16 +5,29 @@
 <p><div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <img class="img-responsive" src="http://animalia-life.com/data_images/dog/dog4.jpg" alt="">
       </div>
- <div class="col-lg-5 col-lg-offset-2 col-sm-6">     
+ <div class="col-lg-10 col-lg-offset-2 col-sm-6">     
    <h2>
+     <div class="row">    
      <p><%= @gsi.name %></p>
      <p><%= @gsi.average_rating %></p>
      <p><%= @gsi.description %><p>
    </h2>
+ </div>
+   <br>
    <br>
   <% @comments.each do |c| %>
     <div id="full-content">
-      <div class="comment">
+       <div class="row">    
+            <br>
+            <div class="col-md-2 col-sm-3 col-lg-5 text-center">
+              <a class="story-img" href="#"><img src="//placehold.it/100" style="width:100px;height:100px" class="img-circle"></a>
+            </div>
+            <div class="col-md-5 col-sm-4">
+              <h3>Post Heading Here</h3>
+              <div class="row">
+                <div class="col-xs-9">
+                  <p>Comment on July 13th:
+                     <div class="comment">
         <h4>
             <b>
               <em>
@@ -41,7 +54,22 @@
         <%= link_to "Reply", new_gsi_comment_reply_path(@gsi,c) %>
       </div></button>
     </div>
+
+
+
+                  </p>
+                  
+                  </div>
+                <div class="col-xs-3"></div>
+              </div>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+
   <% end %>
+          
+     
 </p>
 <br>
   <p>
@@ -71,3 +99,6 @@
     <% end %>
   </p>
 </p>
+<style>
+
+</style>
