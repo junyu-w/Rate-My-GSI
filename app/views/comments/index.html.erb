@@ -6,22 +6,36 @@
         <img class="img-responsive" src="http://animalia-life.com/data_images/dog/dog4.jpg" alt="">
       </div>
  <div class="col-lg-5 col-lg-offset-2 col-sm-6">     
-   <p><%= @gsi.name %></p>
-   <p><%= @gsi.description %><p>
+   <h2>
+     <p><%= @gsi.name %></p>
+     <p><%= @gsi.average_rating %></p>
+     <p><%= @gsi.description %><p>
+   </h2>
+   <br>
   <% @comments.each do |c| %>
     <div id="full-content">
       <div class="comment">
-        <h3>
+        <h4>
             <b>
               <em>
                 <%= c.title %>
               </em>
             </b>
-        </h3>
-        <br>
+        </h4>
+        <b><h5>
+          <%= c.rating %>
+        </h5></b>
         <h4>
           <%= c.content %>
         </h4>
+      </div>
+      <div class="replys">
+      <h5>
+        <% Reply.where(comment_id: c.id).each do |r| %>
+          <%= r.content %>
+          <br>
+        <% end %>
+      </h5>
       </div>
       <button type="button" class="btn-sm"><div>
         <%= link_to "Reply", new_gsi_comment_reply_path(@gsi,c) %>
@@ -38,6 +52,11 @@
             <%= label_tag(:title, "Title: ") %>
             <br>
             <%= f.text_field :title, class: 'form-control task_desc' %>
+          </p>
+          <p>
+            <%= label_tag(:rating, "Rating: ") %>
+            <br>
+            <%= f.number_field :rating, class: 'form-control task_desc', :placeholder => "0-100" %>
           </p>
           <p>
             <%= label_tag(:content, "Content: ") %>
