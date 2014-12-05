@@ -2,3 +2,4 @@ This is a web application named "Rate My GSI", it allows folks in Berkeley rate 
 -- By Junyu Wang, Michael Wei, Sean Dong, Kun Qian
 
 YouTube video: https://www.youtube.com/watch?v=BAvwJyZ_7hQ&feature=youtu.be
+Website url: https://still-plains-1126.herokuapp.com/gsis
